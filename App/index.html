@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>nearme</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Onboarding -->
+  <div id="onboard">
+    <div class="ob-title">nearme</div> <!-- Change this eventually -->
+    <div class="ob-sub">see where your friends are</div>
+    <div class="ob-form">
+      <div>
+        <div class="ob-label">your name</div>
+        <input class="ob-input" id="obName" placeholder="first name" maxlength="18" autocomplete="off"/>
+      </div>
+      <div>
+        <div class="ob-label">colour</div>
+        <div class="color-row" id="colorRow"></div>
+      </div>
+      <div class="ob-av-row">
+        <div class="ob-av" id="obAv">?</div>
+        <div class="ob-av-hint">your map avatar</div>
+      </div>
+      <button class="ob-cta" id="obCreate">Create room</button>
+      <div class="ob-or">— or —</div>
+      <div class="ob-join">
+        <input class="ob-input" id="obCode" placeholder="ROOM CODE" maxlength="6"/>
+        <button class="ob-join-btn" id="obJoin">Join</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div id="mapWrap">
+    <canvas id="tileCanvas"></canvas>
+    <canvas id="friendCanvas"></canvas>
+  </div>
+
+  <!-- Top bar -->
+  <div id="topbar">
+    <div class="tb-av" id="tbAv"></div>
+    <div class="tb-name" id="tbName"></div>
+    <div class="tb-sp"></div>
+    <div class="tb-room">Room <strong id="tbCode"></strong></div>
+  </div>
+
+  <!-- Zoom controls -->
+  <div class="zoom-wrap">
+    <button class="zb" id="zIn">+</button>
+    <div class="zb-sep"></div>
+    <button class="zb" id="zOut">−</button>
+  </div>
+
+  <!-- Locate FAB -->
+  <button id="fabMe">&#128205;</button>
+
+  <!-- Bottom sheet -->
+  <div id="sheet">
+    <div class="sh-handle-row" id="shToggle">
+      <div class="sh-handle"></div>
+    </div>
+    <div class="sh-top" id="shTop">
+      <div class="sh-title" id="shTitle">Friends</div>
+      <div class="sh-right">
+        <span class="sh-code" id="shCode"></span>
+        <button class="sh-share" id="copyBtn">Share code</button>
+      </div>
+    </div>
+    <div class="sh-crew" id="shCrew">
+      <div class="no-crew">Share your room code with friends to see them here.</div>
+    </div>
+  </div>
+
+  <!-- Tap callout -->
+  <div id="callout">
+    <div class="cl-av" id="clAv"></div>
+    <div class="cl-name" id="clName"></div>
+    <div class="cl-time" id="clTime"></div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

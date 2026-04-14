@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #d6f0ff;
+    line-height: 1.6; /* ✅ improves readability */
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a6d8ff;
+    padding: 15px;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 70px;
+}
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* ✅ Hover + focus for accessibility */
+nav a:hover,
+nav a:focus {
+    color: rgb(0, 0, 0);
+    outline: 2px solid black;
+    outline-offset: 3px;
+    transition: 0.3s;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #bfe8ff;
+}
+
+.hero h2 {
+    font-size: 32px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    border: none;
+    background-color: #4da6ff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* ✅ Button focus for keyboard users */
+.hero button:hover,
+.hero button:focus {
+    background-color: #3399ff;
+    outline: 2px solid black;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #4da6ff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #3399ff;
+    outline: 2px solid black;
+}
+/* SECTIONS */
+section {
+    padding: 20px;
+    text-align: center;
+    color: #000; /* ✅ better contrast */
+}
+
+/* SERVICES */
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 170px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+/* OFFER */
+.offer {
+    background-color: #a6d8ff;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    background-color: #a6d8ff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* PET CARE DETAIL SECTIONS */
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 1000px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.section img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.text {
+    max-width: 650px;
+    text-align: left;
+}
+
+.text h2 {
+    margin-bottom: 10px;
+}
+
+/* ✅ clearer divider */
+hr {
+    border: none;
+    height: 2px;
+    background: #80cfff;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+/* TEAM */
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.team-member .text {
+    text-align: left;
+}
+
+.team-member h3 {
+    margin: 0 0 5px 0;
+}
+
+/* CONTACT */
+.contact-info, .locations, .contact-form {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* FORM */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* ✅ Focus styles for form */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #4da6ff;
+    border-color: #4da6ff;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4da6ff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+    background-color: #3399ff;
+    outline: 2px solid black;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ✅ Stack sections on mobile */
+    .section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text {
+        text-align: center;
+    }
+}

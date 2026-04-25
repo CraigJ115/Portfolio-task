@@ -6,6 +6,19 @@
   <title>Trackly - Craig Jones</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    .project-detail-img {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      box-shadow: 0 8px 30px rgba(56,189,248,0.15);
+    }
+    .project-detail-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+      border-radius: 12px;
+    }
+  </style>
 </head>
 <body>
 
@@ -15,6 +28,7 @@
   <ul class="nav-links">
     <li><a href="portfolio.html#projects">Projects</a></li>
     <li><a href="portfolio.html#skills">Skills</a></li>
+    <li><a href="portfolio.html#about">About</a></li>
   </ul>
 </nav>
 
@@ -26,15 +40,16 @@
 
     <!-- LEFT: Image + Tags -->
     <div class="project-detail-left">
-      <div class="project-detail-img"><img src="Trackly.png" alt="Description" width="300">
-</div>
+      <div class="project-detail-img">
+        <img src="Trackly.png" alt="Trackly app screenshot">
+      </div>
       <div class="project-detail-tags">
         <span class="project-tag">HTML</span>
         <span class="project-tag">CSS</span>
         <span class="project-tag">JavaScript</span>
+        <span class="project-tag">Leaflet.js</span>
         <span class="project-tag">Geolocation API</span>
-        <span class="project-tag">Canvas</span>
-        <span class="project-tag">OpenStreetMap</span>
+        <span class="project-tag">BroadcastChannel</span>
       </div>
     </div>
 
@@ -55,23 +70,18 @@
       <div class="project-section">
         <h2>What I Built</h2>
         <p>
-          The app is built entirely with vanilla HTML, CSS and JavaScript — no frameworks or libraries.
-          The map is rendered using HTML5 Canvas, pulling tiles from OpenStreetMap, with custom pan,
-          zoom and touch controls written from scratch. Friend locations are shared in real time using
-          the BroadcastChannel API with LocalStorage as a fallback, so it works across tabs without
-          needing a server. Each user gets a colour-coded avatar pin with their initials, and a bottom
-          sheet shows all friends in the room along with their distance from you.
+          The app is built with vanilla HTML, CSS and JavaScript using Leaflet.js for the map, pulling
+          tiles from OpenStreetMap. Friend locations are shared in real time using the BroadcastChannel
+          API with LocalStorage as a fallback, so it works across tabs without needing a server. Each
+          user gets a colour-coded avatar pin with their initials, and a bottom sheet shows all friends
+          in the room along with their distance from you.
         </p>
       </div>
 
       <div class="project-section">
         <h2>What I Learned</h2>
         <p>
-          This project pushed me into areas I hadn't explored before — working directly with the
-          Geolocation API, rendering a full interactive map on Canvas, and building peer communication
-          without a backend using BroadcastChannel. It gave me a much stronger understanding of how
-          browser APIs work under the hood and how to build something genuinely functional with just
-          vanilla JavaScript.
+          This project pushed me into unfamiliar territory technically, but also made me think carefully about UX decisions — designing an onboarding flow with zero friction (no sign-up, just a name, a colour and a code), and making the map UI legible at a glance with colour-coded avatar pins and a clear friend list. Getting that balance between simplicity and functionality right was the biggest design challenge.
         </p>
       </div>
 
@@ -83,6 +93,11 @@
 </div>
 
 <footer>
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/craig-jones-88479a2bb/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/CraigJ115" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
+  <p>© 2026 Craig Jones</p>
 </footer>
 
 </body>

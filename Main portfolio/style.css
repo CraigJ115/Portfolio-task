@@ -269,6 +269,136 @@ footer {
 .footer-socials a { color: #aaa; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
 .footer-socials a:hover { color: #fff; }
 
+/* HERO SCROLL INDICATOR */
+.hero-scroll {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.6);
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll { animation: none; }
+}
+
+/* EDUCATION */
+#education {
+  background: #f5f3ff;
+  padding: 70px 40px;
+}
+.edu-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 24px 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.edu-degree {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e1b4b;
+  margin-bottom: 6px;
+}
+.edu-school {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+}
+.edu-right { text-align: right; flex-shrink: 0; }
+.edu-year {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4c1d95;
+}
+.edu-status {
+  display: block;
+  font-size: 0.75rem;
+  color: #888;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* CURRENTLY CARD */
+.currently-card {
+  background: #f0ebff;
+  border: 2px solid #c4b5fd;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.currently-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #7c3aed;
+  margin-bottom: 2px;
+}
+.currently-row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+.currently-label {
+  font-weight: 700;
+  color: #4c1d95;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 68px;
+  flex-shrink: 0;
+}
+.currently-value {
+  font-size: 0.85rem;
+  color: #444;
+  font-weight: 600;
+}
+
+/* CONTACT SECTION */
+#contact { padding: 70px 40px; text-align: center; }
+.contact-simple-inner {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.contact-simple-inner > p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.contact-email-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #4c1d95, #7c3aed);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(76,29,149,0.35);
+  transition: transform 0.2s;
+}
+.contact-email-btn:hover { transform: translateY(-2px); }
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
 /* PROJECT DETAIL PAGE */
 .project-page {
   max-width: 1100px;
@@ -384,4 +514,6 @@ footer {
   .about-photo { max-width: 180px; margin: 0 auto; }
   nav { padding: 12px 20px; }
   .nav-links { gap: 16px; }
+  .edu-card { flex-direction: column; align-items: flex-start; }
+  .edu-right { text-align: left; }
 }

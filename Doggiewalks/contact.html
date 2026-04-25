@@ -1,43 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Contact - Doggie Walks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header>
     <div class="logo-title">
-        <img src="logo.svg" class="logo">
+        <img src="logo.svg" alt="Doggie Walks logo" class="logo">
         <h1>Doggie Walks</h1>
     </div>
 
-    <nav>
+    <nav aria-label="Main navigation">
         <a href="Doggiewalks.html">Home</a>
         <a href="about.html">About</a>
         <a href="team.html">Meet the Team</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" aria-current="page">Contact</a>
     </nav>
 </header>
 
+<main id="main-content">
+
 <section>
     <h2>Contact Us</h2>
-    <p>We’d love to hear from you! Get in touch below.</p>
+    <p>We'd love to hear from you! Get in touch below.</p>
 </section>
 
 <!-- CONTACT INFO -->
 <section class="contact-info">
-    <p><strong>Phone:</strong> 01695 883 112</p>
-    <p><strong>Email:</strong> info@doggiewalks.co.uk</p>
+    <p><strong>Phone:</strong> <a href="tel:01695883112">01695 883 112</a></p>
+    <p><strong>Email:</strong> <a href="mailto:info@doggiewalks.co.uk">info@doggiewalks.co.uk</a></p>
 </section>
 
 <!-- LOCATIONS -->
 <section class="locations">
     <h2>Our Locations</h2>
-
     <p><strong>Ormskirk:</strong> 3-5 St Helens Road, L35 4PO</p>
     <p><strong>Southport:</strong> 150 Lord Street, PR9 0NP</p>
     <p><strong>Warrington:</strong> 47 Old Liverpool Road, WA5 1AF</p>
@@ -48,21 +55,23 @@
     <h2>Send us a message</h2>
 
     <form>
-        <label>Name:</label><br>
-        <input type="text" required><br><br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
 
-        <label>Email:</label><br>
-        <input type="email" required><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-        <label>Message:</label><br>
-        <textarea rows="5" required></textarea><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
 
         <button type="submit">Send Message</button>
     </form>
 </section>
 
+</main>
+
 <footer>
-    <p>📞 01695 883 112 | ✉ info@doggiewalks.co.uk</p>
+    <p><span aria-hidden="true">📞</span> <a href="tel:01695883112">01695 883 112</a> | <span aria-hidden="true">✉</span> <a href="mailto:info@doggiewalks.co.uk">info@doggiewalks.co.uk</a></p>
     <p>Mon–Fri: 8am–7pm | Sat: 8am–5pm | Sun: 12pm–5pm</p>
 </footer>
 

@@ -2,11 +2,34 @@
     box-sizing: border-box;
 }
 
+/* SKIP LINK */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: #2d6a4f;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 0 0 8px 0;
+    font-weight: bold;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Nunito', sans-serif;
     margin: 0;
-    background-color: #d6f0ff;
-    line-height: 1.6; /* ✅ improves readability */
+    background-color: #f0f4f0;
+    color: #1b2e22;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Fredoka', sans-serif;
 }
 
 /* HEADER */
@@ -14,7 +37,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #a6d8ff;
+    background-color: #2d6a4f;
     padding: 15px;
 }
 
@@ -24,6 +47,10 @@ header {
     gap: 10px;
 }
 
+.logo-title h1 {
+    color: #ffffff;
+}
+
 .logo {
     width: 70px;
 }
@@ -31,15 +58,20 @@ header {
 nav a {
     margin: 10px;
     text-decoration: none;
-    color: black;
+    color: #f0f4f0;
     font-weight: bold;
 }
 
-/* ✅ Hover + focus for accessibility */
+nav a[aria-current="page"] {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
 nav a:hover,
 nav a:focus {
-    color: rgb(0, 0, 0);
-    outline: 2px solid black;
+    color: #ffffff;
+    outline: 2px solid #f0f4f0;
     outline-offset: 3px;
     transition: 0.3s;
 }
@@ -48,51 +80,54 @@ nav a:focus {
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background-color: #bfe8ff;
+    background-color: #f0f4f0;
 }
 
 .hero h2 {
     font-size: 32px;
+    color: #2d6a4f;
 }
 
 .hero p {
     font-size: 18px;
+    color: #2d6a4f;
 }
 
 .hero button {
     padding: 12px 25px;
     border: none;
-    background-color: #4da6ff;
-    color: rgb(0, 0, 0);
+    background-color: #2d6a4f;
+    color: #ffffff;
     cursor: pointer;
     border-radius: 8px;
 }
 
-/* ✅ Button focus for keyboard users */
 .hero button:hover,
 .hero button:focus {
-    background-color: #3399ff;
-    outline: 2px solid black;
+    background-color: #1f4d38;
+    outline: 2px solid #2d6a4f;
 }
+
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #4da6ff;
-    color: rgb(0, 0, 0);
+    background-color: #2d6a4f;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
 }
 
 .btn:hover,
 .btn:focus {
-    background-color: #3399ff;
-    outline: 2px solid black;
+    background-color: #1f4d38;
+    outline: 2px solid #2d6a4f;
 }
+
 /* SECTIONS */
 section {
     padding: 20px;
     text-align: center;
-    color: #000; /* ✅ better contrast */
+    color: #2d6a4f;
 }
 
 /* SERVICES */
@@ -118,7 +153,13 @@ section {
 
 /* OFFER */
 .offer {
-    background-color: #a6d8ff;
+    background-color: #2d6a4f;
+    color: #f0f4f0;
+}
+
+.offer h2,
+.offer p {
+    color: #f0f4f0;
 }
 
 /* GALLERY */
@@ -143,9 +184,20 @@ section {
 
 /* FOOTER */
 footer {
-    background-color: #a6d8ff;
+    background-color: #2d6a4f;
+    color: #f0f4f0;
     text-align: center;
     padding: 15px;
+}
+
+/* FOOTER LINKS */
+footer a {
+    color: #f0f4f0;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #74c69d;
 }
 
 /* PET CARE DETAIL SECTIONS */
@@ -177,13 +229,13 @@ footer {
 
 .text h2 {
     margin-bottom: 10px;
+    color: #2d6a4f;
 }
 
-/* ✅ clearer divider */
 hr {
     border: none;
     height: 2px;
-    background: #80cfff;
+    background: #74c69d;
     margin: 20px auto;
     max-width: 900px;
 }
@@ -211,6 +263,7 @@ hr {
 
 .team-member h3 {
     margin: 0 0 5px 0;
+    color: #2d6a4f;
 }
 
 /* CONTACT */
@@ -232,17 +285,16 @@ hr {
     border: 1px solid #ccc;
 }
 
-/* ✅ Focus styles for form */
 .contact-form input:focus,
 .contact-form textarea:focus {
-    outline: 2px solid #4da6ff;
-    border-color: #4da6ff;
+    outline: 2px solid #2d6a4f;
+    border-color: #2d6a4f;
 }
 
 .contact-form button {
     padding: 10px 20px;
     border: none;
-    background-color: #4da6ff;
+    background-color: #2d6a4f;
     color: white;
     border-radius: 8px;
     cursor: pointer;
@@ -250,8 +302,8 @@ hr {
 
 .contact-form button:hover,
 .contact-form button:focus {
-    background-color: #3399ff;
-    outline: 2px solid black;
+    background-color: #1f4d38;
+    outline: 2px solid #2d6a4f;
 }
 
 /* MOBILE */
@@ -271,7 +323,6 @@ hr {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* ✅ Stack sections on mobile */
     .section {
         flex-direction: column;
         text-align: center;

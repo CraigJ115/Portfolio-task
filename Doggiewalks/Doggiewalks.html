@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Doggie Walks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- HEADER -->
 <header>
@@ -16,7 +21,7 @@
     </div>
 
     <nav aria-label="Main navigation">
-        <a href="Doggiewalks.html">Home</a>
+        <a href="Doggiewalks.html" aria-current="page">Home</a>
         <a href="about.html">About</a>
         <a href="team.html">Meet the Team</a>
         <a href="services.html">Services</a>
@@ -83,8 +88,8 @@
 
 <!-- FOOTER -->
 <footer>
-    <p>📞 01695 883 112</p>
-    <p>✉ info@doggiewalks.co.uk</p>
+    <p><span aria-hidden="true">📞</span> <a href="tel:01695883112">01695 883 112</a></p>
+    <p><span aria-hidden="true">✉</span> <a href="mailto:info@doggiewalks.co.uk">info@doggiewalks.co.uk</a></p>
     <p>Mon–Fri: 8am–7pm | Sat: 8am–5pm | Sun: 12pm–5pm</p>
 </footer>
 

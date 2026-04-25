@@ -197,7 +197,7 @@ footer a {
 
 footer a:hover,
 footer a:focus {
-    color: #74c69d;
+    color: #ffffff;
 }
 
 /* PET CARE DETAIL SECTIONS */
@@ -304,6 +304,33 @@ hr {
 .contact-form button:focus {
     background-color: #1f4d38;
     outline: 2px solid #2d6a4f;
+}
+
+/* SHIBA */
+#shiba {
+  position: fixed;
+  left: 20px;
+  top: -120px;
+  width: 100px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@keyframes shibaRunDown {
+  0%   { top: -120px;              left: 20px; right: auto; transform: rotate(90deg); }
+  100% { top: calc(100vh + 120px); left: 20px; right: auto; transform: rotate(90deg); }
+}
+
+@keyframes shibaRunUp {
+  0%   { top: calc(100vh + 120px); right: 20px; left: auto; transform: rotate(-90deg); }
+  100% { top: -120px;              right: 20px; left: auto; transform: rotate(-90deg); }
+}
+
+#shiba.run-down { animation: shibaRunDown 2s linear forwards; }
+#shiba.run-up   { animation: shibaRunUp   2s linear forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  #shiba { display: none; }
 }
 
 /* MOBILE */

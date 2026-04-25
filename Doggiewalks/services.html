@@ -72,5 +72,23 @@
     <p>Mon–Fri: 8am–7pm | Sat: 8am–5pm | Sun: 12pm–5pm</p>
 </footer>
 
+
+<img id="shiba" src="shiba.gif" alt="">
+
+<script>
+  let lastY = window.scrollY, running = false;
+  window.addEventListener('scroll', () => {
+    const dir = window.scrollY > lastY ? 'right' : 'left';
+    lastY = window.scrollY;
+    if (running) return;
+    const shiba = document.getElementById('shiba');
+    shiba.classList.remove('run-down', 'run-up');
+    void shiba.offsetWidth;
+    shiba.classList.add(dir === 'right' ? 'run-down' : 'run-up');
+    running = true;
+    setTimeout(() => { running = false; }, 2000);
+  });
+</script>
+
 </body>
 </html>

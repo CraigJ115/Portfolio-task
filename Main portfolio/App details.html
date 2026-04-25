@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Doogie Walks - Craig Jones</title>
+  <title>Trackly - Craig Jones</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
-
 </head>
 <body>
 
@@ -14,8 +13,8 @@
 <nav>
   <a class="nav-logo" href="portfolio.html">Craig Jones</a>
   <ul class="nav-links">
-    <li><a href="index.html#projects">Projects</a></li>
-    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="portfolio.html#projects">Projects</a></li>
+    <li><a href="portfolio.html#skills">Skills</a></li>
   </ul>
 </nav>
 
@@ -25,46 +24,58 @@
 
   <div class="project-detail-grid">
 
-    <!-- LEFT: Image -->
+    <!-- LEFT: Image + Tags -->
     <div class="project-detail-left">
-      <div class="project-detail-img">
-       <img src="/Doggiewalks/logo.svg" alt="Doggie Walks">
-      </div>
+      <div class="project-detail-img">🗺️</div>
       <div class="project-detail-tags">
         <span class="project-tag">HTML</span>
         <span class="project-tag">CSS</span>
+        <span class="project-tag">JavaScript</span>
+        <span class="project-tag">Geolocation API</span>
+        <span class="project-tag">Canvas</span>
+        <span class="project-tag">OpenStreetMap</span>
       </div>
     </div>
 
     <!-- RIGHT: Text -->
     <div class="project-detail-right">
-      <h1>Doogie Walks</h1>
-      <p class="project-subtitle">Dog walking booking website</p>
+      <h1>Trackly</h1>
+      <p class="project-subtitle">Real-time friend location sharing app</p>
 
       <div class="project-section">
         <h2>About the Project</h2>
         <p>
-          For my big portfolio task I had to build a dog walking website called doggie walks, this involved making a home page, about page, contact page, team page and a gallery page.
+          Trackly is a browser-based app that lets you see where your friends are in real time on a live map.
+          Users create or join a room using a short room code, pick a colour and name, and immediately
+          appear as a pinned avatar on a shared map. No accounts, no installs — just share a code and go.
         </p>
       </div>
 
       <div class="project-section">
         <h2>What I Built</h2>
         <p>
-          Describe the features you built — e.g. a booking form, a homepage,
-          an interactive map, etc. Talk about the key parts of the site.
+          The app is built entirely with vanilla HTML, CSS and JavaScript — no frameworks or libraries.
+          The map is rendered using HTML5 Canvas, pulling tiles from OpenStreetMap, with custom pan,
+          zoom and touch controls written from scratch. Friend locations are shared in real time using
+          the BroadcastChannel API with LocalStorage as a fallback, so it works across tabs without
+          needing a server. Each user gets a colour-coded avatar pin with their initials, and a bottom
+          sheet shows all friends in the room along with their distance from you.
         </p>
       </div>
 
       <div class="project-section">
         <h2>What I Learned</h2>
         <p>
-          Talk about the skills and techniques you picked up during this project.
-          Mention anything new you tried or challenges you overcame.
+          This project pushed me into areas I hadn't explored before — working directly with the
+          Geolocation API, rendering a full interactive map on Canvas, and building peer communication
+          without a backend using BroadcastChannel. It gave me a much stronger understanding of how
+          browser APIs work under the hood and how to build something genuinely functional with just
+          vanilla JavaScript.
         </p>
       </div>
 
-      <a class="project-detail-btn" href="#" target="_blank">View Live Site →</a>
+      <a class="project-detail-btn" href="../App/Trackly.html" target="_blank">View Live Site →</a>
+
     </div>
 
   </div>

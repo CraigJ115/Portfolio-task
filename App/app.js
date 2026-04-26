@@ -236,7 +236,7 @@ function renderCrew() {
   if (!others.length) {
     const el = document.createElement('div');
     el.className = 'no-crew';
-    el.textContent = 'Share your code with friends to see them here.';
+    el.textContent = 'Share your code and your friends will show up here.';
     sc.appendChild(el);
   } else {
     others.forEach(m => {

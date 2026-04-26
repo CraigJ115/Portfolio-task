@@ -1,4 +1,5 @@
 const PAL = ['#FF3B30','#FF9500','#FFCC00','#34C759','#007AFF','#5856D6','#FF2D55','#00C7BE'];
+const PAL_NAMES = ['Red','Orange','Yellow','Green','Blue','Purple','Pink','Teal'];
 let pick = PAL[4], myId = 'u_' + Math.random().toString(36).slice(2,9);
 let myName = '', myIni = '', roomCode = '';
 let room = {}, bc = null, shOpen = false, firstFix = true;
@@ -14,14 +15,20 @@ map.on('click', hideCallout);
 
 // Color swatches
 const cr = document.getElementById('colorRow');
-PAL.forEach(c => {
+PAL.forEach((c, i) => {
   const s = document.createElement('div');
   s.className = 'cswatch' + (c === pick ? ' on' : '');
   s.style.background = c;
+  s.setAttribute('role', 'radio');
+  s.setAttribute('aria-checked', c === pick ? 'true' : 'false');
+  s.setAttribute('aria-label', PAL_NAMES[i]);
+  s.setAttribute('tabindex', c === pick ? '0' : '-1');
   s.onclick = () => {
     pick = c;
-    document.querySelectorAll('.cswatch').forEach(x => x.classList.remove('on'));
+    document.querySelectorAll('.cswatch').forEach(x => { x.classList.remove('on'); x.setAttribute('aria-checked', 'false'); x.setAttribute('tabindex', '-1'); });
     s.classList.add('on');
+    s.setAttribute('aria-checked', 'true');
+    s.setAttribute('tabindex', '0');
     document.getElementById('obAv').style.background = c;
   };
   cr.appendChild(s);

@@ -16,11 +16,11 @@
     <div class="ob-sub">See where your friends are</div>
     <div class="ob-form">
       <div>
-        <div class="ob-label">Your name</div>
+        <label class="ob-label" for="obName">Your name</label>
         <input class="ob-input" id="obName" placeholder="First name" maxlength="18" autocomplete="off"/>
       </div>
-      <div>
-        <div class="ob-label">Colour</div>
+      <div role="group" aria-labelledby="colour-label">
+        <div class="ob-label" id="colour-label">Colour</div>
         <div class="color-row" id="colorRow"></div>
       </div>
       <div class="ob-av-row">
@@ -49,17 +49,17 @@
 
   <!-- Zoom controls -->
   <div class="zoom-wrap">
-    <button class="zb" id="zIn">+</button>
+    <button class="zb" id="zIn" aria-label="Zoom in">+</button>
     <div class="zb-sep"></div>
-    <button class="zb" id="zOut">−</button>
+    <button class="zb" id="zOut" aria-label="Zoom out">−</button>
   </div>
 
   <!-- Locate FAB -->
-  <button id="fabMe">&#128205;</button>
+  <button id="fabMe" aria-label="Go to my location">&#128205;</button>
 
   <!-- Bottom sheet -->
   <div id="sheet">
-    <div class="sh-handle-row" id="shToggle">
+    <div class="sh-handle-row" id="shToggle" role="button" tabindex="0" aria-label="Toggle friends list">
       <div class="sh-handle"></div>
     </div>
     <div class="sh-top" id="shTop">

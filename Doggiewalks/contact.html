@@ -56,7 +56,7 @@
 <section class="contact-form">
     <h2>Send us a message</h2>
 
-    <form>
+    <form id="contact-form">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br><br>
 
@@ -68,6 +68,9 @@
 
         <button type="submit">Send Message</button>
     </form>
+    <div id="form-success" style="display:none;" role="alert">
+        <p>Message sent! We'll get back to you as soon as possible.</p>
+    </div>
 </section>
 
 </main>
@@ -79,6 +82,26 @@
 
 
 <img id="shiba" src="shiba.gif" alt="">
+
+<style>
+  #form-success {
+    background: #e6f4ea;
+    border: 2px solid #2d6a4f;
+    border-radius: 8px;
+    padding: 16px 20px;
+    color: #1b2e22;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+</style>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  });
+</script>
 
 <script>
   let lastY = window.scrollY, running = false;

@@ -3,7 +3,7 @@ const PAL_NAMES = ['Red','Orange','Yellow','Green','Blue','Purple','Pink','Teal'
 let pick = PAL[4], myId = 'u_' + Math.random().toString(36).slice(2,9);
 let myName = '', myIni = '', roomCode = '';
 let room = {}, bc = null, shOpen = false, firstFix = true;
-let markers = {};
+let markers = {}, watchId = null, sharing = true, demoTimer = null, usingDemo = false;
 
 // Leaflet map
 const map = L.map('map', { zoomControl: false }).setView([48.85, 2.35], 5);
@@ -119,13 +119,13 @@ function loadStor() {
 function broadMe() { broadcast({ type: 'update', member: room[myId] }); }
 
 function startGPS() {
-  if (!navigator.geolocation) { demo(); return; }
-  navigator.geolocation.watchPosition(pos => {
+  if (!navigator.geolocation) { usingDemo = true; demo(); return; }
+  watchId = navigator.geolocation.watchPosition(pos => {
     const { latitude: lat, longitude: lng } = pos.coords;
     room[myId].lat = lat; room[myId].lng = lng; room[myId].ts = Date.now();
     broadMe(); updateMarker(room[myId]); renderCrew();
     if (firstFix) { firstFix = false; flyTo(lat, lng, 14); }
-  }, demo, { enableHighAccuracy: true, maximumAge: 4000 });
+  }, () => { usingDemo = true; demo(); }, { enableHighAccuracy: true, maximumAge: 4000 });
 }
 
 function demo() {
@@ -133,7 +133,7 @@ function demo() {
   room[myId].lat = b.lat; room[myId].lng = b.lng; room[myId].ts = Date.now();
   broadMe(); updateMarker(room[myId]); renderCrew();
   if (firstFix) { firstFix = false; flyTo(b.lat, b.lng, 13); }
-  setInterval(() => {
+  demoTimer = setInterval(() => {
     room[myId].lat += (Math.random() - .5) * .0003;
     room[myId].lng += (Math.random() - .5) * .0003;
     room[myId].ts = Date.now();
@@ -208,6 +208,28 @@ document.getElementById('copyBtn').onclick = () => {
   toast('Room code copied!');
 };
 
+document.getElementById('shareToggle').onclick = () => {
+  sharing = !sharing;
+  const btn = document.getElementById('shareToggle');
+  if (!sharing) {
+    if (watchId !== null) { navigator.geolocation.clearWatch(watchId); watchId = null; }
+    if (demoTimer !== null) { clearInterval(demoTimer); demoTimer = null; }
+    btn.textContent = '○ Paused';
+    btn.classList.add('off');
+    btn.setAttribute('aria-label', 'Resume sharing location');
+    btn.setAttribute('aria-pressed', 'false');
+    toast('Location sharing paused');
+  } else {
+    usingDemo ? demo() : startGPS();
+    btn.textContent = '● Live';
+    btn.classList.remove('off');
+    btn.setAttribute('aria-label', 'Stop sharing location');
+    btn.setAttribute('aria-pressed', 'true');
+    toast('Location sharing resumed');
+  }
+  renderCrew();
+};
+
 function showCallout(m, px, py) {
   document.getElementById('clAv').textContent = m.ini;
   document.getElementById('clAv').style.background = m.color;
@@ -257,7 +279,7 @@ function mkCard(m, dist, isMe) {
   const el = document.createElement('div'); el.className = 'cc';
   const online = m.ts && (Date.now() - m.ts) < 15000;
   const ds = dist === null ? '' : dist < 1 ? Math.round(dist * 1000) + 'm' : dist.toFixed(1) + 'km';
-  el.innerHTML = `<div class="cc-av" style="background:${m.color}">${m.ini}${(online || isMe) ? '<div class="cc-dot"></div>' : ''}</div><div class="cc-name">${isMe ? 'You' : m.name}</div><div class="cc-dist">${isMe ? 'Sharing' : ds || '–'}</div>`;
+  el.innerHTML = `<div class="cc-av" style="background:${m.color}">${m.ini}${(online || isMe) && sharing ? '<div class="cc-dot"></div>' : ''}</div><div class="cc-name">${isMe ? 'You' : m.name}</div><div class="cc-dist">${isMe ? (sharing ? 'Sharing' : 'Paused') : ds || '–'}</div>`;
   if (!isMe && m.lat) el.onclick = () => flyTo(m.lat, m.lng, 15);
   return el;
 }

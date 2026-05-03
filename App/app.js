@@ -243,7 +243,7 @@ function renderCrew() {
   if (!others.length) {
     const el = document.createElement('div');
     el.className = 'no-crew';
-    el.textContent = 'Share your code and your friends will show up here.';
+    el.textContent = 'No one else in the room yet — share the code above to invite someone.';
     sc.appendChild(el);
   } else {
     others.forEach(m => {

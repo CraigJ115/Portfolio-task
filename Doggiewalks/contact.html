@@ -11,29 +11,27 @@
 
 <body>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
 <header>
     <div class="logo-title">
         <img src="logo.svg" alt="Doggie Walks logo" class="logo">
         <h1>Doggie Walks</h1>
     </div>
 
-    <nav aria-label="Main navigation">
+    <nav>
         <a href="Doggiewalks.html">Home</a>
         <a href="about.html">About</a>
         <a href="team.html">Meet the Team</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
-        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
     </nav>
 </header>
 
-<main id="main-content">
+<main>
 
 <section>
     <h2>Contact Us</h2>
-    <p>We have branches across Lancashire and Merseyside — see the locations below. Feel free to pop in, give us a ring, or fill out the form and we'll get back to you.</p>
+    <p>We have a wide variety of daycare facilities — listed below are all our locations and their addresses. Feel free to pop in or fill out the form below.</p>
 </section>
 
 <!-- CONTACT INFO -->
@@ -45,11 +43,26 @@
 <!-- LOCATIONS -->
 <section class="locations">
     <h2>Our Locations</h2>
-    <p><strong>Ormskirk:</strong> Lancashire</p>
-    <p><strong>Southport:</strong> Merseyside</p>
-    <p><strong>Preston:</strong> Lancashire</p>
-    <p><strong>Liverpool:</strong> Merseyside</p>
-    <p><strong>Warrington:</strong> Cheshire</p>
+
+    <p><strong>Ormskirk</strong><br>
+    Doggie Walks<br>
+    3-5 St Helens Road,<br>
+    Ormskirk,<br>
+    L35 4PO</p>
+
+    <p><strong>Southport</strong><br>
+    Doggie Walks<br>
+    150 Lord Street,<br>
+    Southport,<br>
+    PR9 0NP</p>
+
+    <p><strong>Warrington</strong><br>
+    Doggie Walks<br>
+    47 Old Liverpool Road,<br>
+    Warrington,<br>
+    WA5 1AF</p>
+
+    <p>We also serve: Preston and Liverpool. <a href="tel:01695883112">Call us</a> to find your nearest walker.</p>
 </section>
 
 <!-- CONTACT FORM -->
@@ -68,7 +81,7 @@
 
         <button type="submit">Send Message</button>
     </form>
-    <div id="form-success" style="display:none;" role="alert">
+    <div id="form-success" style="display:none;">
         <p>Message sent! We'll get back to you as soon as possible.</p>
     </div>
 </section>
@@ -76,7 +89,7 @@
 </main>
 
 <footer>
-    <p><span aria-hidden="true">📞</span> <a href="tel:01695883112">01695 883 112</a> | <span aria-hidden="true">✉</span> <a href="mailto:info@doggiewalks.co.uk">info@doggiewalks.co.uk</a></p>
+    <p>📞 <a href="tel:01695883112">01695 883 112</a> | ✉ <a href="mailto:info@doggiewalks.co.uk">info@doggiewalks.co.uk</a></p>
     <p>Mon–Fri: 8am–7pm | Sat: 8am–5pm | Sun: 12pm–5pm</p>
 </footer>
 
@@ -85,11 +98,11 @@
 
 <style>
   #form-success {
-    background: #e6f4ea;
-    border: 2px solid #2d6a4f;
+    background: #e6f0f9;
+    border: 2px solid #4a8db5;
     border-radius: 8px;
     padding: 16px 20px;
-    color: #1b2e22;
+    color: #1a3a5c;
     font-weight: 600;
     margin-top: 12px;
   }

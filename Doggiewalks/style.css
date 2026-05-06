@@ -2,29 +2,13 @@
     box-sizing: border-box;
 }
 
-/* SKIP LINK */
-.skip-link {
-    position: absolute;
-    top: -100%;
-    left: 0;
-    background: #2d6a4f;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 0 0 8px 0;
-    font-weight: bold;
-    z-index: 1000;
-    text-decoration: none;
-}
-
-.skip-link:focus {
-    top: 0;
-}
-
 body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
-    background-color: #f0f4f0;
-    color: #1b2e22;
+    background-color: #e8f4fd;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ccircle cx='30' cy='28' r='8' fill='%234a8db5' fill-opacity='0.1'/%3E%3Ccircle cx='50' cy='18' r='8' fill='%234a8db5' fill-opacity='0.1'/%3E%3Ccircle cx='70' cy='28' r='8' fill='%234a8db5' fill-opacity='0.1'/%3E%3Cellipse cx='50' cy='62' rx='22' ry='18' fill='%234a8db5' fill-opacity='0.1'/%3E%3C/svg%3E");
+    background-size: 120px 120px;
+    color: #1a3a5c;
     line-height: 1.6;
 }
 
@@ -37,7 +21,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2d6a4f;
+    background-color: #4a8db5;
     padding: 15px;
 }
 
@@ -58,11 +42,11 @@ header {
 nav a {
     margin: 10px;
     text-decoration: none;
-    color: #f0f4f0;
+    color: #e8f4fd;
     font-weight: bold;
 }
 
-nav a[aria-current="page"] {
+nav a.active {
     color: #ffffff;
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -71,32 +55,41 @@ nav a[aria-current="page"] {
 nav a:hover,
 nav a:focus {
     color: #ffffff;
-    outline: 2px solid #f0f4f0;
+    outline: 2px solid #e8f4fd;
     outline-offset: 3px;
     transition: 0.3s;
+}
+
+/* BANNER */
+.banner {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    object-position: 70% 25%;
+    display: block;
 }
 
 /* HERO */
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background-color: #f0f4f0;
+    background-color: #e8f4fd;
 }
 
 .hero h2 {
     font-size: 32px;
-    color: #2d6a4f;
+    color: #4a8db5;
 }
 
 .hero p {
     font-size: 18px;
-    color: #2d6a4f;
+    color: #4a8db5;
 }
 
 .hero button {
     padding: 12px 25px;
     border: none;
-    background-color: #2d6a4f;
+    background-color: #4a8db5;
     color: #ffffff;
     cursor: pointer;
     border-radius: 8px;
@@ -104,14 +97,14 @@ nav a:focus {
 
 .hero button:hover,
 .hero button:focus {
-    background-color: #1f4d38;
-    outline: 2px solid #2d6a4f;
+    background-color: #3a7aa0;
+    outline: 2px solid #4a8db5;
 }
 
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #2d6a4f;
+    background-color: #4a8db5;
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
@@ -119,15 +112,15 @@ nav a:focus {
 
 .btn:hover,
 .btn:focus {
-    background-color: #1f4d38;
-    outline: 2px solid #2d6a4f;
+    background-color: #3a7aa0;
+    outline: 2px solid #4a8db5;
 }
 
 /* SECTIONS */
 section {
     padding: 20px;
     text-align: center;
-    color: #2d6a4f;
+    color: #4a8db5;
 }
 
 /* SERVICES */
@@ -153,13 +146,13 @@ section {
 
 /* OFFER */
 .offer {
-    background-color: #2d6a4f;
-    color: #f0f4f0;
+    background-color: #4a8db5;
+    color: #e8f4fd;
 }
 
 .offer h2,
 .offer p {
-    color: #f0f4f0;
+    color: #e8f4fd;
 }
 
 /* GALLERY */
@@ -184,15 +177,15 @@ section {
 
 /* FOOTER */
 footer {
-    background-color: #2d6a4f;
-    color: #f0f4f0;
+    background-color: #4a8db5;
+    color: #e8f4fd;
     text-align: center;
     padding: 15px;
 }
 
 /* FOOTER LINKS */
 footer a {
-    color: #f0f4f0;
+    color: #e8f4fd;
 }
 
 footer a:hover,
@@ -229,13 +222,13 @@ footer a:focus {
 
 .text h2 {
     margin-bottom: 10px;
-    color: #2d6a4f;
+    color: #4a8db5;
 }
 
 hr {
     border: none;
     height: 2px;
-    background: #74c69d;
+    background: #7dc4e8;
     margin: 20px auto;
     max-width: 900px;
 }
@@ -263,7 +256,7 @@ hr {
 
 .team-member h3 {
     margin: 0 0 5px 0;
-    color: #2d6a4f;
+    color: #4a8db5;
 }
 
 /* CONTACT */
@@ -287,14 +280,14 @@ hr {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    outline: 2px solid #2d6a4f;
-    border-color: #2d6a4f;
+    outline: 2px solid #4a8db5;
+    border-color: #4a8db5;
 }
 
 .contact-form button {
     padding: 10px 20px;
     border: none;
-    background-color: #2d6a4f;
+    background-color: #4a8db5;
     color: white;
     border-radius: 8px;
     cursor: pointer;
@@ -302,8 +295,8 @@ hr {
 
 .contact-form button:hover,
 .contact-form button:focus {
-    background-color: #1f4d38;
-    outline: 2px solid #2d6a4f;
+    background-color: #3a7aa0;
+    outline: 2px solid #4a8db5;
 }
 
 /* SHIBA */
@@ -328,10 +321,6 @@ hr {
 
 #shiba.run-down { animation: shibaRunDown 2s linear forwards; }
 #shiba.run-up   { animation: shibaRunUp   2s linear forwards; }
-
-@media (prefers-reduced-motion: reduce) {
-  #shiba { display: none; }
-}
 
 /* MOBILE */
 @media (max-width: 768px) {

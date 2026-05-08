@@ -694,6 +694,157 @@ body.game-layout .process-grid {
   .sidebar-stats { flex-direction: row; flex-wrap: wrap; gap: 12px; padding: 10px 14px; }
 }
 
+/* PROJECT CARD — per-card backgrounds */
+.project-card:nth-child(1) .project-img { background: linear-gradient(135deg, #f0f4f0, #c8e6d0); }
+.project-card:nth-child(1) .project-img img { object-fit: cover; padding: 0; }
+.project-card:nth-child(2) .project-img { background: linear-gradient(135deg, #0f172a, #1e293b); }
+.project-card:nth-child(2) .project-img img { object-fit: contain; padding: 8px; }
+
+/* DETAIL PAGE — Doggie Walks */
+.page-doggiewalks .project-detail-img {
+  background: linear-gradient(135deg, #f0f4f0, #c8e6d0);
+  box-shadow: 0 8px 30px rgba(45,106,79,0.2);
+}
+.page-doggiewalks .project-detail-img img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+/* DETAIL PAGE — Trackly */
+.page-trackly .project-detail-img {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  box-shadow: 0 8px 30px rgba(56,189,248,0.15);
+}
+.page-trackly .project-detail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+/* PROFILE PAGE (about.html) */
+.profile-page { max-width: 1060px; margin: 0 auto; padding: 40px 30px 60px; }
+.profile-header { margin-bottom: 36px; }
+.profile-header-tag {
+  font-family: 'Courier New', monospace;
+  font-size: 0.65rem;
+  color: #3a3860;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+.profile-header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ede9ff;
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+.profile-header-sub {
+  font-size: 0.82rem;
+  color: #5a5880;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.profile-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: sticky;
+  top: 80px;
+}
+.pcard {
+  background: #111120;
+  border: 1px solid #22223a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.pcard-portrait img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.8) contrast(1.05);
+  border-bottom: 1px solid #22223a;
+}
+.pcard-portrait-info { padding: 12px 14px; }
+.pcard-portrait-name { font-size: 0.9rem; font-weight: 700; color: #ede9ff; margin-bottom: 3px; }
+.pcard-portrait-class {
+  font-family: 'Courier New', monospace;
+  font-size: 0.6rem;
+  color: #4a7a40;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.pcard-stats { padding: 14px; display: flex; flex-direction: column; gap: 9px; }
+.pstat { display: flex; justify-content: space-between; align-items: baseline; }
+.pstat-label {
+  font-family: 'Courier New', monospace;
+  font-size: 0.58rem;
+  color: #3a3860;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.pstat-val { font-size: 0.75rem; font-weight: 700; color: #7c7a9e; }
+.pstat-val.available { color: #4a7a40; }
+.pcard-loadout { padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.pcard-loadout-title {
+  font-family: 'Courier New', monospace;
+  font-size: 0.58rem;
+  color: #3a3860;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.loadout-row { display: flex; gap: 10px; align-items: baseline; }
+.loadout-key {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #4c1d95;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 52px;
+  font-family: 'Courier New', monospace;
+}
+.loadout-val { font-size: 0.76rem; color: #6e6c8e; font-weight: 600; }
+.pcard-links { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+.profile-right { display: flex; flex-direction: column; gap: 18px; }
+.ps {
+  background: #111120;
+  border: 1px solid #22223a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ps-header {
+  padding: 14px 18px 12px;
+  border-bottom: 1px solid #1a1a30;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.ps-num {
+  font-family: 'Courier New', monospace;
+  font-size: 0.62rem;
+  color: #4c1d95;
+  letter-spacing: 1px;
+}
+.ps-title { font-size: 0.88rem; font-weight: 700; color: #9985d4; letter-spacing: 1px; text-transform: uppercase; font-family: 'Courier New', monospace; }
+.ps-body { padding: 16px 18px; }
+.ps-body p { font-size: 0.83rem; color: #6e6c8e; line-height: 1.8; font-weight: 600; margin-bottom: 10px; }
+.ps-body p:last-child { margin-bottom: 0; }
+@media (max-width: 700px) {
+  .profile-grid { grid-template-columns: 1fr; }
+  .profile-left { position: static; }
+  .profile-header h1 { font-size: 1.8rem; }
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .process-grid { flex-direction: column; gap: 12px; }

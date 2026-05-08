@@ -545,14 +545,14 @@ body.game-layout {
   border-left-color: #a855f7;
   color: #c4beff;
 }
-.gmi-indicator {
+.menu-indicator {
   font-size: 0.4rem;
   color: #a855f7;
   opacity: 0;
   transition: opacity 0.1s;
 }
-.game-menu-item:hover .gmi-indicator { opacity: 0.5; }
-.game-menu-item.active .gmi-indicator { opacity: 1; }
+.game-menu-item:hover .menu-indicator { opacity: 0.5; }
+.game-menu-item.active .menu-indicator { opacity: 1; }
 
 .sidebar-stats {
   border-top: 1px solid #1e1e35;
@@ -561,8 +561,8 @@ body.game-layout {
   flex-direction: column;
   gap: 7px;
 }
-.ss-row { display: flex; justify-content: space-between; gap: 8px; }
-.ss-label {
+.stats-row { display: flex; justify-content: space-between; gap: 8px; }
+.stats-label {
   font-size: 0.56rem;
   font-weight: 700;
   color: #2a2a45;
@@ -570,7 +570,7 @@ body.game-layout {
   letter-spacing: 1px;
   font-family: 'Courier New', monospace;
 }
-.ss-val { font-size: 0.68rem; font-weight: 700; color: #5a5880; }
+.stats-val { font-size: 0.68rem; font-weight: 700; color: #5a5880; }
 
 /* CONTENT AREA */
 .game-content-area {

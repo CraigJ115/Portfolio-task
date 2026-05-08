@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile — Craig Jones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%234c1d95'/><text x='16' y='22' font-family='Arial' font-size='13' font-weight='bold' fill='white' text-anchor='middle'>CJ</text></svg>"/>
+  <style>
+    /* Character sheet styles — scoped to this page */
+
+    .profile-page { max-width: 1060px; margin: 0 auto; padding: 40px 30px 60px; }
+
+    .profile-header { margin-bottom: 36px; }
+    .profile-header-tag {
+      font-family: 'Courier New', monospace;
+      font-size: 0.65rem;
+      color: #3a3860;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+    }
+    .profile-header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #ede9ff;
+      margin-bottom: 6px;
+      line-height: 1.1;
+    }
+    .profile-header-sub {
+      font-size: 0.82rem;
+      color: #5a5880;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    /* LEFT PANEL */
+    .profile-left {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: sticky;
+      top: 80px;
+    }
+
+    .pcard {
+      background: #111120;
+      border: 1px solid #22223a;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .pcard-portrait img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.8) contrast(1.05);
+      border-bottom: 1px solid #22223a;
+    }
+    .pcard-portrait-info { padding: 12px 14px; }
+    .pcard-portrait-name { font-size: 0.9rem; font-weight: 700; color: #ede9ff; margin-bottom: 3px; }
+    .pcard-portrait-class {
+      font-family: 'Courier New', monospace;
+      font-size: 0.6rem;
+      color: #4a7a40;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .pcard-stats { padding: 14px; display: flex; flex-direction: column; gap: 9px; }
+    .pstat { display: flex; justify-content: space-between; align-items: baseline; }
+    .pstat-label {
+      font-family: 'Courier New', monospace;
+      font-size: 0.58rem;
+      color: #3a3860;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .pstat-val { font-size: 0.75rem; font-weight: 700; color: #7c7a9e; }
+    .pstat-val.available { color: #4a7a40; }
+
+    .pcard-loadout { padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .pcard-loadout-title {
+      font-family: 'Courier New', monospace;
+      font-size: 0.58rem;
+      color: #3a3860;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+    .loadout-row { display: flex; gap: 10px; align-items: baseline; }
+    .loadout-key {
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #4c1d95;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      min-width: 52px;
+      font-family: 'Courier New', monospace;
+    }
+    .loadout-val { font-size: 0.76rem; color: #6e6c8e; font-weight: 600; }
+
+    .pcard-links { padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+
+    /* RIGHT PANEL */
+    .profile-right { display: flex; flex-direction: column; gap: 18px; }
+
+    .ps {
+      background: #111120;
+      border: 1px solid #22223a;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .ps-header {
+      padding: 14px 18px 12px;
+      border-bottom: 1px solid #1a1a30;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .ps-num {
+      font-family: 'Courier New', monospace;
+      font-size: 0.62rem;
+      color: #4c1d95;
+      letter-spacing: 1px;
+    }
+    .ps-title { font-size: 0.88rem; font-weight: 700; color: #9985d4; letter-spacing: 1px; text-transform: uppercase; font-family: 'Courier New', monospace; }
+    .ps-body { padding: 16px 18px; }
+    .ps-body p { font-size: 0.83rem; color: #6e6c8e; line-height: 1.8; font-weight: 600; margin-bottom: 10px; }
+    .ps-body p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 700px) {
+      .profile-grid { grid-template-columns: 1fr; }
+      .profile-left { position: static; }
+      .profile-header h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav>
+  <a class="nav-logo" href="portfolio.html">Craig Jones</a>
+  <ul class="nav-links">
+    <li><a href="portfolio.html">Projects</a></li>
+    <li><a href="portfolio.html">Skills</a></li>
+    <li><a class="nav-active" href="about.html">About</a></li>
+    <li><a href="portfolio.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="profile-page" id="main-content">
+
+  <div class="profile-header fade-up">
+    <div class="profile-header-tag">// PLAYER PROFILE</div>
+    <h1>Craig Jones</h1>
+    <div class="profile-header-sub">UX Designer · AI Tinkerer · Liverpool, UK</div>
+  </div>
+
+  <div class="profile-grid">
+
+    <!-- LEFT -->
+    <div class="profile-left">
+
+      <div class="pcard pcard-portrait fade-up" style="--i:0">
+        <img src="pfp.jpg" alt="Craig Jones">
+        <div class="pcard-portrait-info">
+          <div class="pcard-portrait-name">Craig Jones</div>
+          <div class="pcard-portrait-class">UX / Web Design</div>
+        </div>
+      </div>
+
+      <div class="pcard fade-up" style="--i:1">
+        <div class="pcard-stats">
+          <div class="pstat"><span class="pstat-label">LEVEL</span><span class="pstat-val">Final Year</span></div>
+          <div class="pstat"><span class="pstat-label">CLASS</span><span class="pstat-val">UX Designer</span></div>
+          <div class="pstat"><span class="pstat-label">BASE</span><span class="pstat-val">Liverpool, UK</span></div>
+          <div class="pstat"><span class="pstat-label">STATUS</span><span class="pstat-val available">Available Jul '26</span></div>
+        </div>
+      </div>
+
+      <div class="pcard fade-up" style="--i:2">
+        <div class="pcard-loadout">
+          <div class="pcard-loadout-title">// LOADOUT</div>
+          <div class="loadout-row"><span class="loadout-key">Playing</span><span class="loadout-val">RE6 (ch.5)</span></div>
+          <div class="loadout-row"><span class="loadout-key">Watching</span><span class="loadout-val">Supernatural</span></div>
+          <div class="loadout-row"><span class="loadout-key">Listening</span><span class="loadout-val">Sabbath / Metallica</span></div>
+          <div class="loadout-row"><span class="loadout-key">Building</span><span class="loadout-val">4-model AI</span></div>
+        </div>
+      </div>
+
+      <div class="pcard fade-up" style="--i:3">
+        <div class="pcard-loadout">
+          <div class="pcard-loadout-title">// MISC</div>
+          <div class="loadout-row"><span class="loadout-key">AI models</span><span class="loadout-val">4 (they mostly agree)</span></div>
+          <div class="loadout-row"><span class="loadout-key">RE playthroughs</span><span class="loadout-val">lost count</span></div>
+          <div class="loadout-row"><span class="loadout-key">Supernatural runs</span><span class="loadout-val">3ish</span></div>
+          <div class="loadout-row"><span class="loadout-key">Volume preference</span><span class="loadout-val">yes</span></div>
+        </div>
+      </div>
+
+      <div class="pcard fade-up" style="--i:4">
+        <div class="pcard-links">
+          <a class="btn-outline" href="https://www.linkedin.com/in/craig-jones-88479a2bb/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn-outline" href="https://github.com/CraigJ115" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="profile-right">
+
+      <div class="ps fade-up" style="--i:0">
+        <div class="ps-header">
+          <span class="ps-num">01</span>
+          <span class="ps-title">Backstory</span>
+        </div>
+        <div class="ps-body">
+          <p>I'm in my final year of Web Design at Edge Hill. I gravitated towards UX because the psychology behind it genuinely interests me, why do people click the wrong button? Why does a small layout change completely alter someone's behaviour? That's what I want to keep working on.</p>
+          <p>Before uni I spent six years at Aktrion, worked my way up from general operative to team leader, managing 40+ staff across shifts. That taught me a lot about people, process and how decisions at the top affect everyone else. Useful background to carry into UX.</p>
+          <p>The AI project has gotten a bit bigger than I originally planned and is now sitting in it's own SSD. It's running four separate models such as Llama 3.1 as the backbone for general stuff, Qwen 2.5 Coder for anything that needs debugging, DeepSeek-R1 when something needs actual reasoning rather than a confident guess, and Gemma2:9b for planning. Less "personal assistant", and more "assembled a small AI team and told them to figure it out." It's going well until one of them change a bit of code and break the whole thing (Which has happened twice so far..)</p>
+          <p>Outside of that: big Resident Evil fan, currently RE6 for the first time in years. Also rewatching Supernatural — I've lost count of how many times at this point, probably like 6th or 7th it is basically my comfort show. Musically I'm mostly into classic rock and heavy metal like Black Sabbath, Metallica, AC/DC, that kind of thing.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/craig-jones-88479a2bb/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/CraigJ115" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
+  <p>© 2026 Craig Jones</p>
+</footer>
+
+<script src="fade.js"></script>
+</body>
+</html>

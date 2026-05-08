@@ -29,10 +29,10 @@
 <nav>
   <a class="nav-logo" href="portfolio.html">Craig Jones</a>
   <ul class="nav-links">
-    <li><a href="portfolio.html#projects">Projects</a></li>
-    <li><a href="portfolio.html#skills">Skills</a></li>
-    <li><a href="portfolio.html#about">About</a></li>
-    <li><a href="portfolio.html#contact">Contact</a></li>
+    <li><a href="portfolio.html">Projects</a></li>
+    <li><a href="portfolio.html">Skills</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html">Contact</a></li>
   </ul>
 </nav>
 
@@ -42,7 +42,7 @@
 
   <div class="project-detail-grid">
 
-    <div class="project-detail-left">
+    <div class="project-detail-left fade-up" style="--i:0">
       <div class="project-detail-img">
         <img src="Trackly.png" alt="Trackly app screenshot">
       </div>
@@ -57,35 +57,50 @@
     </div>
 
     <div class="project-detail-right">
-      <h1>Trackly</h1>
-      <p class="project-subtitle">Real-time friend location sharing app</p>
 
-      <div class="project-section">
-        <h2>About the Project</h2>
+      <div class="fade-up" style="--i:1">
+        <h1>Trackly</h1>
+        <p class="project-subtitle">Real-time friend location sharing app</p>
+        <div class="project-highlights">
+          <span class="project-highlight">Vanilla JS</span>
+          <span class="project-highlight">No backend</span>
+          <span class="project-highlight">Live map</span>
+          <span class="project-highlight">Room codes</span>
+        </div>
+      </div>
+
+      <div class="project-section fade-up" style="--i:2">
+        <h2><span class="section-num">01</span> About the Project</h2>
         <p>
-          Trackly lets you see where your friends are in real time on a live map. You create a room, share a short code, pick a colour and name, and you show up as a pin on a shared map. That's it — no accounts, no app to download.
+          Trackly lets you see where your friends are in real time on a live map. You create a room, share a short code, pick a colour and name, and you show up as a pin on a shared map. That's it: no accounts, no app to download.
         </p>
       </div>
 
-      <div class="project-section">
-        <h2>What I Built</h2>
+      <div class="project-section fade-up" style="--i:3">
+        <h2><span class="section-num">02</span> What I Built</h2>
         <p>
           Built with vanilla HTML, CSS and JavaScript. I used Leaflet.js for the map with tiles from OpenStreetMap. To share locations between users without a server I used the BroadcastChannel API, with LocalStorage as a fallback. Each person gets a colour-coded pin with their initials, and there's a bottom sheet that lists everyone in the room and how far away they are.
         </p>
       </div>
 
-      <div class="project-section">
-        <h2>What I Learned</h2>
+      <div class="project-section fade-up" style="--i:4">
+        <h2><span class="section-num">03</span> What I Learned</h2>
         <p>
-          This was probably the most technically challenging thing I've built. I'd never used the Geolocation API or BroadcastChannel before so there was a lot of figuring things out as I went. I also had to think about how to keep it simple enough that someone could just use it without any explanation — no sign-up, just a code and you're in.
+          This was probably the most technically challenging thing I've built. I'd never used the Geolocation API or BroadcastChannel before so there was a lot of figuring things out as I went. I also had to think about how to keep it simple enough that someone could just use it without any explanation. No sign-up, just a code and you're in.
         </p>
       </div>
 
-      <a class="project-detail-btn" href="../App/Trackly.html" target="_blank">View Live Site →</a>
+      <a class="project-detail-btn fade-up" style="--i:5" href="../App/Trackly.html" target="_blank">View Live Site →</a>
 
     </div>
 
   </div>
+
+  <div class="project-nav fade-up" style="--i:6">
+    <a class="project-nav-back" href="portfolio.html">← All projects</a>
+    <a class="project-nav-next" href="detail page doggie walks.html">Next: Doggie Walks →</a>
+  </div>
+
 </div>
 
 <footer>
@@ -96,5 +111,6 @@
   <p>© 2026 Craig Jones</p>
 </footer>
 
+<script src="fade.js"></script>
 </body>
 </html>

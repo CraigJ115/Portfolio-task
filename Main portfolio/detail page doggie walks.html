@@ -28,10 +28,10 @@
 <nav>
   <a class="nav-logo" href="portfolio.html">Craig Jones</a>
   <ul class="nav-links">
-    <li><a href="portfolio.html#projects">Projects</a></li>
-    <li><a href="portfolio.html#skills">Skills</a></li>
-    <li><a href="portfolio.html#about">About</a></li>
-    <li><a href="portfolio.html#contact">Contact</a></li>
+    <li><a href="portfolio.html">Projects</a></li>
+    <li><a href="portfolio.html">Skills</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="portfolio.html">Contact</a></li>
   </ul>
 </nav>
 
@@ -41,7 +41,7 @@
 
   <div class="project-detail-grid">
 
-    <div class="project-detail-left">
+    <div class="project-detail-left fade-up" style="--i:0">
       <div class="project-detail-img">
         <img src="../Doggiewalks/logo.svg" alt="Doggie Walks logo">
       </div>
@@ -53,34 +53,50 @@
     </div>
 
     <div class="project-detail-right">
-      <h1>Doggie Walks</h1>
-      <p class="project-subtitle">Dog walking service website</p>
 
-      <div class="project-section">
-        <h2>About the Project</h2>
+      <div class="fade-up" style="--i:1">
+        <h1>Doggie Walks</h1>
+        <p class="project-subtitle">Dog walking service website</p>
+        <div class="project-highlights">
+          <span class="project-highlight">6 pages</span>
+          <span class="project-highlight">One stylesheet</span>
+          <span class="project-highlight">WCAG AA</span>
+          <span class="project-highlight">Scroll animation</span>
+        </div>
+      </div>
+
+      <div class="project-section fade-up" style="--i:2">
+        <h2><span class="section-num">01</span> About the Project</h2>
         <p>
           A website built for a fictional dog walking service based across Lancashire and Merseyside. The brief asked for a fully functional multi-page site built from scratch, with a focus on accessibility.
         </p>
       </div>
 
-      <div class="project-section">
-        <h2>What I Built</h2>
+      <div class="project-section fade-up" style="--i:3">
+        <h2><span class="section-num">02</span> What I Built</h2>
         <p>
-          Six pages — Home, About, Services, Gallery, Meet the Team and Contact — all sharing one stylesheet. I built a sticky header, a services section with pricing, a photo gallery, team profiles and a contact form with validated inputs. I also added a scroll-triggered shiba inu gif that runs up and down the page which I'm pretty happy with.
+          Six pages: Home, About, Services, Gallery, Meet the Team and Contact, all sharing one stylesheet. I built a sticky header, a services section with pricing, a photo gallery, team profiles and a contact form with validated inputs. I also added a scroll-triggered shiba inu gif that runs up and down the page which I'm pretty happy with.
         </p>
       </div>
 
-      <div class="project-section">
-        <h2>What I Learned</h2>
+      <div class="project-section fade-up" style="--i:4">
+        <h2><span class="section-num">03</span> What I Learned</h2>
         <p>
-          This was the first time I really got into accessibility properly. I learned about WCAG contrast ratios, skip links, ARIA labels and how to write semantic HTML that actually means something. It made me realise how much thought goes into making a site that works for everyone, not just people using it the way you'd expect.
+          This was the first time I really got into accessibility properly. I learned about WCAG contrast ratios, skip links, ARIA labels and proper semantic HTML. It made me realise how much extra thought goes into building something that actually works for everyone.
         </p>
       </div>
 
-      <a class="project-detail-btn" href="../Doggiewalks/Doggiewalks.html" target="_blank">View Live Site →</a>
+      <a class="project-detail-btn fade-up" style="--i:5" href="../Doggiewalks/Doggiewalks.html" target="_blank">View Live Site →</a>
+
     </div>
 
   </div>
+
+  <div class="project-nav fade-up" style="--i:6">
+    <a class="project-nav-back" href="portfolio.html">← All projects</a>
+    <a class="project-nav-next" href="App details.html">Next: Trackly →</a>
+  </div>
+
 </div>
 
 <footer>
@@ -91,5 +107,6 @@
   <p>© 2026 Craig Jones</p>
 </footer>
 
+<script src="fade.js"></script>
 </body>
 </html>
